@@ -1,2 +1,6 @@
-SMTPHandler examples
-HttpHandler examples
+1- SMTPHandler examples
+2- HttpHandler examples
+
+3- when we use config file or dictionary file?
+4- why django use dictionary file?
+5- try import logger and use it in another file
