@@ -130,38 +130,58 @@ fh.setFormatter(format_)
 logger.addHandler(fh)
 
 
+===========================================================================
 
+9- using varabile data to log record.
 
-
+LOOK file#5 ==> 5_logging_variable_data
 
 
 ===========================================================================
 
+10- capture full stack trace [traceback]
+# we can use the logging module to capture the full stack trace of an application
+# by passing exc_info=True as parameter.
+# if exc_info is false, the program output will not show the stack trace, just the message.
 
+LOOK: file#6 ==> 6_capturing_stack_traces
+===========================================================================
 
+11-
 
+logging.exception(f"can not divide {x} by {y}")  # is equivalent to logging.error(msg, exc_info=True)
 
+LOOK: file#6 ==> 6_capturing_stack_traces
 
 ===========================================================================
 
+12-
 
-
-
-
-===========================================================================
-
-
-
-
+logging.exception(f"Can Not Divide '{x}' By '{y}'")  # is equivalent to logging.error(msg, exc_info=True)
+# logging.exception() is short hand for logging.error() events
+# # logging.exception() uses level of ERROR. [LOOK THIS OUTPUT]
+LOOK: file#6 ==> 6_capturing_stack_traces
 
 ===========================================================================
 
+13- LOOK: file#6 ==> 6_capturing_stack_traces
 
+try:
+    username = "John"
+    age = 25
+    info = username + " " + age
 
+except TypeError:
+    logging.warning("Invalid contacting. use f-string or format method", exc_info=True)
 
-
-===========================================================================
-
+    # output:
+    """
+    root - WARNING - Invalid contacting. use f-string or format method
+    Traceback (most recent call last):
+        File "E:/containers/learn-projects/python-logging/6_capturing_stack_traces.py", line 63, in <module>
+            info = username + " " + age
+    TypeError: can only concatenate str (not "int") to str
+    """
 
 
 
