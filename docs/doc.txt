@@ -281,4 +281,13 @@ format=%(name)s %(asctime)s %(process)d %(levelname)s %(pathname)s:%(lineno)s %(
 
 
 
+==================================
+
+ways of config
+1- basicConfig function
+2- handlers & formatters
+3- conf file  ==> fil.conf
+4- yaml file ==> file.yaml
+5- dictionary
+
 
