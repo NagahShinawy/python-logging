@@ -1,0 +1,20 @@
+version: 1
+formatters:
+  sample:
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+
+handlers:
+  console:
+  class: logging. StreamHandler
+  level: DEBUG
+  formatter: sample
+  stream: ext://sys.stdout
+
+loggers:
+  sampleLogger:
+  level: DEBUG
+  handlers: [console]
+  propagate: no
+root:
+  level: DEBUG
+  handlers: [console]
