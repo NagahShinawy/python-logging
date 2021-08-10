@@ -34,6 +34,7 @@ so, if the logging set as WARNING, it means we can just log events [WARNING, ERR
 means [DEBUG, INFO] events won't be logged
 
 ===========================================================================
+4- logging module contains function for every severity level[ 5 functions with 5 levels]
 
 logging.debug("DEBUG")  # NO OUTPUT
 logging.info("INFO")    # NO OUTPUT
@@ -44,7 +45,7 @@ logging.critical("TEST CRITICAL")  # CRITICAL:root:TEST CRITICAL
 - root is the name of the default logger
 
 
-the default logger logs events marked as WARNING or more server. which means log events [WARNING, ERROR, CRITICAL]
+the default logger logs events marked as WARNING or more severe. which means log events [WARNING, ERROR, CRITICAL]
 
 that why the output is:
 
@@ -52,6 +53,52 @@ WARNING:root:TEST WARNING
 ERROR:root:TEST ERROR
 CRITICAL:root:TEST CRITICAL
 
+- default logging format is [level:default logger name: message] ===> CRITICAL:root:TESTING MESSAGE
+
+===========================================================================
+
+5- the basicConfig method is used to config logging [ method in camelCase because it comes from loggin utils in Java]
+
+common parameters:
+- level: set the minimal severity level to log
+- filename: file to log to.
+- filemode: mode to open file in, a(append) is the default.
+- format: the format of the log message.
+
+
+===========================================================================
+
+6- if you are using
+
+logging.basicConfig(level=logging.DEBUG, filename="app.log", format="%(name)s - %(levelname)s - %(message)s")
+
+so, so logs will added to filename [app.log] not to console.
+
+- [%(name)s - %(levelname)s - %(message)s] : are built in  variables that represent exactly what you think they would
+
+- later you can use your own variables here.
+
+===========================================================================
+7-
+
+
+logging.basicConfig(
+            level=logging.DEBUG,
+            filename="app.log",
+            format="%(name)s - %(levelname)s - %(message)s",
+        )
+
+# basicConfig can only be called once.
+
+# the severity level functions [debug, info, warning, error, critical] call basicConfig internally
+# if it has not been called before.
+
+# that means we must call basicConfig() ourselves before we use any of the severity level functions.[ 5 funcs]
+
+# calling basicConfig() just like override the default configurations
+# [default logger name is root, default level is: WARNING].
+
+
 ===========================================================================
 
 
@@ -60,6 +107,36 @@ CRITICAL:root:TEST CRITICAL
 
 ===========================================================================
 
+
+
+
+
+
+===========================================================================
+
+
+
+
+
+===========================================================================
+
+
+
+
+
+===========================================================================
+
+
+
+
+
+===========================================================================
+
+
+
+
+
+===========================================================================
 
 
 

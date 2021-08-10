@@ -69,7 +69,7 @@ warning = WARNING()
 error = ERROR()
 critical = CRITICAL()
 
-logs = [warning, error, critical]
+logs = [debug, info, warning, error, critical]
 
 for log in logs:
     log.showlogs("test")
