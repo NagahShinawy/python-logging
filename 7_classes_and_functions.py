@@ -12,6 +12,7 @@
 
 # ############# ############# ############# ############# ############# ############
 
+# (Handlers): represent output destinations
 # Handlers: send the LogRecord to the required output destination, like a console or file.
 # StreamHandler(Handler) for console, RotatingFileHandler(Handler) for log file.
 # StreamHandler & RotatingFileHandler are subclasses[children] of (Handler) class.
@@ -28,6 +29,12 @@ import logging
 # logger = logging.getLogger("example logger")
 # logger.warning("this is warning.")  # this is warning. ==> logger obj has no default format, WE JUST SEE THE MESSAGE.
 # logging.warning("this is warning")  # WARNING:root:this is warning ==> [level:log name:message]
+
+# ############# ############# ############# ############# ############# ############
+
+# attach 'handlers' to 'logger' that we can use it.
+
+# __name__: special name variable that represents the current module name.
 
 # ############# ############# ############# ############# ############# ############
 
