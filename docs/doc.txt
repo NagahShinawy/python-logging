@@ -1,0 +1,67 @@
+1- what is logging ?
+
+- is very usefull tool in programmer toolkit
+- better understanding flow of app.
+
+===========================================================================
+
+2- what is the logging module?
+
+- it makes it easy to add log output.
+- used by most of third part libraries, so you can combine you own log output with that of
+the libraries you are using to create comprhensive logs
+
+- just use [import logging]
+
+- logging module provides default logger that is great for getting started.
+- to lo and event, we must first assign it a severity[خطورة]. that represent how severity even is
+- then we can log only events of a specific severity level or greater
+  which help us to maintain clean logs that don't contain unnecessary events.
+
+===========================================================================
+3- there are [5] severity levels that we can use by default
+
+- DEBUG is the least severe, critical is the most.
+
+
+- DEBUG
+- INFO
+- WARNING
+- ERROR
+- CRITICAL
+
+so, if the logging set as WARNING, it means we can just log events [WARNING, ERROR, CRITICAL]
+means [DEBUG, INFO] events won't be logged
+
+===========================================================================
+
+logging.debug("DEBUG")  # NO OUTPUT
+logging.info("INFO")    # NO OUTPUT
+logging.warning("TEST WARNING")  # WARNING:root:TEST WARNING
+logging.error("TEST ERROR")      # ERROR:root:TEST ERROR
+logging.critical("TEST CRITICAL")  # CRITICAL:root:TEST CRITICAL
+
+- root is the name of the default logger
+
+
+the default logger logs events marked as WARNING or more server. which means log events [WARNING, ERROR, CRITICAL]
+
+that why the output is:
+
+WARNING:root:TEST WARNING
+ERROR:root:TEST ERROR
+CRITICAL:root:TEST CRITICAL
+
+===========================================================================
+
+
+
+
+
+===========================================================================
+
+
+
+
+
+===========================================================================
